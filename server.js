@@ -17,7 +17,7 @@ const db = knex({
     }
 });
 
-//const PORT = process.env.PORT;
+const PORT = process.env.PORT;
 
 const app = express();
 
@@ -40,6 +40,6 @@ app.post('/signup',(req,res) =>
     signup.handleSignUp(req, res, db, bcrypt)
 );
 
-app.listen(3000, () => {
+app.listen(PORT || 3000, () => {
     console.log("Face Detect App is running");
 });
