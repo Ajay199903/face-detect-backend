@@ -10,10 +10,8 @@ import api from './controllers/api.js';
 const db = knex({
     client: 'pg',
     connection: {
-        host: 'postgresql-regular-30778',
-        user: 'ajay',
-        password: 'ajay1103kanyal',
-        database: 'face-detect'
+        host: process.env.DATABASE_URL,
+        ssl: true
     }
 });
 
